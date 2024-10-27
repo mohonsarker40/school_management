@@ -37,6 +37,9 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -45,7 +48,7 @@
 
 @include('layouts.sideNav')
 
-@yield('admin.dashboard')
+@yield('content')
 
 @include('layouts.footer')
 
