@@ -51,10 +51,7 @@
 
                             <div class="card-body">
 
-                                <div class="pt-4 pb-2">
-                                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                    <p class="text-center small">Enter your email & password to login</p>
-                                </div>
+                                <div class="pt-4 pb-2"></div>
 
                                 <form action="{{ url('login') }}" method="post" class="row g-3 needs-validation" novalidate>
                                     @csrf
@@ -76,8 +73,8 @@
 
                                     <div class="col-12">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                                            <input class="form-check-input" type="checkbox" name="remember" value="true" id="remember">
+                                            <label class="form-check-label" for="remember">Remember me</label>
                                         </div>
                                     </div>
                                     <div class="col-12">

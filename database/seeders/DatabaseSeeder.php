@@ -16,12 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-         [
-             'name' => 'mohon',
-             'email' => 'mohon@gmail.com',
-             'password' => Hash::make('1234'),
-         ];
-         User::truncate();
+        // \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }
