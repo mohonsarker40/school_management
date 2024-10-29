@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('', [\App\Http\Controllers\auth\AuthController::class, 'index']);
-Route::post('/login', [\App\Http\Controllers\auth\AuthController::class, 'authLogin']);
+Route::post('login', [\App\Http\Controllers\auth\AuthController::class, 'authLogin']);
+Route::get('logout', [\App\Http\Controllers\auth\AuthController::class, 'logout']);
 
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard');

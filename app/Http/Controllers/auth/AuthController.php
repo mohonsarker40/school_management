@@ -5,8 +5,6 @@ namespace App\Http\Controllers\auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-
 class AuthController extends Controller
 {
 
@@ -22,9 +20,15 @@ class AuthController extends Controller
         {
             return redirect('admin/dashboard');
         }else{
-            return redirect()->back()->with('errors', 'correction your email and password');
+            return redirect()->back()->with('error', 'correction your email or password');
         }
 
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect(url(''));
     }
 
 

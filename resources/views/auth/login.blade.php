@@ -48,14 +48,18 @@
                         </div><!-- End Logo -->
 
                         <div class="card mb-3">
-
                             <div class="card-body">
-
                                 <div class="pt-4 pb-2"></div>
+
+                                @if (session('error'))
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        {{ session('error') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                @endif
 
                                 <form action="{{ url('login') }}" method="post" class="row g-3 needs-validation" novalidate>
                                     @csrf
-
                                     <div class="col-12">
                                         <label for="email" class="form-label">Email</label>
                                         <div class="input-group has-validation">
