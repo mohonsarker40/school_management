@@ -13,49 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('', [\App\Http\Controllers\auth\AuthController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\auth\AuthController::class, 'index']);
 Route::post('login', [\App\Http\Controllers\auth\AuthController::class, 'authLogin']);
 Route::get('logout', [\App\Http\Controllers\auth\AuthController::class, 'logout']);
 
-Route::get('admin/dashboard', function () {
-    return view('admin.dashboard');
-});
 
 Route::get('admin/admin/list', function () {
     return view('admin.admin.list');
 });
 
 
-
-
 Route::group(['middleware' => 'admin'], function () {
-
-    Route::get('admin/dashboard', function () {
-        return view('admin.dashboard');
-    });
+    Route::get('admin/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
 });
 
 Route::group(['middleware' => 'teacher'], function () {
-
-    Route::get('teacher/dashboard', function () {
-        return view('admin.dashboard');
-    });
+    Route::get('teacher/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
 });
 
 Route::group(['middleware' => 'student'], function () {
-
-    Route::get('student/dashboard', function () {
-        return view('admin.dashboard');
-    });
+    Route::get('student/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
 });
 
 Route::group(['middleware' => 'parent'], function () {
-
-    Route::get('parent/dashboard', function () {
-        return view('admin.dashboard');
-    });
+    Route::get('parent/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
 });
