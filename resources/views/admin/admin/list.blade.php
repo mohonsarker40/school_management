@@ -4,12 +4,13 @@
 
         <div class="pagetitle">
             <h1>Admin Tables</h1>
-            <nav>
+            <nav class="d-flex justify-content-between">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
                     <li class="breadcrumb-item">Admin</li>
                     <li class="breadcrumb-item active">Tables</li>
                 </ol>
+                <a class="btn btn-primary" href="{{ url('admin/admin/create') }}">Add new Admin</a>
             </nav>
         </div><!-- End Page Title -->
 
@@ -27,9 +28,9 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Position</th>
-                                    <th scope="col">Age</th>
-                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Created_at</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>

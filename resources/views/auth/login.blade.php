@@ -75,10 +75,13 @@
                                         <div class="invalid-feedback">Please enter your password!</div>
                                     </div>
 
-                                    <div class="col-12">
+                                    <div class="col-12 d-flex justify-content-between">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="remember" value="true" id="remember">
                                             <label class="form-check-label" for="remember">Remember me</label>
+                                        </div>
+                                        <div>
+                                            <a href="{{ url('forgot_password') }}"><h6>Forgot Password?</h6></a>
                                         </div>
                                     </div>
                                     <div class="col-12">
