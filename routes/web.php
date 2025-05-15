@@ -1,12 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\auth\AuthController;
 
 //login
-Route::get('/', [\App\Http\Controllers\auth\AuthController::class, 'index']);
-Route::post('login', [\App\Http\Controllers\auth\AuthController::class, 'authLogin']);
-Route::get('logout', [\App\Http\Controllers\auth\AuthController::class, 'logout']);
-Route::get('forgot_password', [\App\Http\Controllers\auth\AuthController::class, 'forgot_password']);
+Route::get('/', [AuthController::class, 'index']);
+Route::post('login', [AuthController::class, 'authLogin']);
+Route::get('logout', [AuthController::class, 'logout']);
+Route::get('forgot_password', [AuthController::class, 'forgot_password']);
 
 
 Route::get('admin/admin/list', function () {
@@ -18,20 +21,20 @@ Route::get('admin/admin/create', function () {
 });
 
 
-    Route::post('admin/store', [\App\Http\Controllers\AdminController::class, 'admin.store']);
+Route::post('admin/store', [AdminController::class, 'admin.store']);
 
 Route::group(['middleware' => 'admin'], function () {
-    Route::get('admin/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
+    Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
 });
 
 Route::group(['middleware' => 'teacher'], function () {
-    Route::get('teacher/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
+    Route::get('teacher/dashboard', [DashboardController::class, 'dashboard']);
 });
 
 Route::group(['middleware' => 'student'], function () {
-    Route::get('student/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
+    Route::get('student/dashboard', [DashboardController::class, 'dashboard']);
 });
 
 Route::group(['middleware' => 'parent'], function () {
-    Route::get('parent/dashboard', [\App\Http\Controllers\DashboardController::class, 'dashboard']);
+    Route::get('parent/dashboard', [DashboardController::class, 'dashboard']);
 });

@@ -80,7 +80,7 @@
                                             <label class="form-check-label" for="remember">Remember me</label>
                                         </div>
                                         <div>
-                                            <a href="{{ url('forgot_password') }}"><h6>Forgot Password?</h6></a>
+{{--                                            <a href="{{ url('forgot_password') }}"><h6>Forgot Password?</h6></a>--}}
                                         </div>
                                     </div>
                                     <div class="col-12">
